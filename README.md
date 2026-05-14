@@ -1,45 +1,5 @@
 # Affordmed Campus Hiring Evaluation — Full Stack
 
-## 📁 Repository Structure
-
-```
-<your-roll-number>/                    ← GitHub repo name = your roll number
-├── logging_middleware/                ← Reusable logging package (TypeScript)
-│   ├── src/index.ts
-│   ├── package.json
-│   └── tsconfig.json
-├── notification_app_be/               ← Backend (Express + TypeScript)
-│   ├── src/
-│   │   ├── config/auth.ts
-│   │   ├── controller/notificationController.ts
-│   │   ├── domain/notification.ts
-│   │   ├── middleware/errorHandler.ts
-│   │   ├── route/notificationRoutes.ts
-│   │   ├── service/notificationService.ts
-│   │   ├── service/priorityService.ts
-│   │   └── index.ts
-│   ├── package.json
-│   └── tsconfig.json
-├── notification_app_fe/               ← Frontend (Next.js + Material UI)
-│   ├── src/
-│   │   ├── api/notificationApi.ts
-│   │   ├── component/NotificationCard.tsx
-│   │   ├── pages/index.tsx
-│   │   ├── pages/_app.tsx
-│   │   ├── state/useNotifications.ts
-│   │   └── styles/global.css
-│   ├── package.json
-│   └── tsconfig.json
-├── notification_system_design.md      ← Stages 1–6 written answers
-└── .gitignore
-```
-
----
-
-## ✅ STEP-BY-STEP SETUP GUIDE
-
----
-
 ### STEP 1 — Create GitHub Repository
 
 1. Go to github.com → New Repository
@@ -159,17 +119,16 @@ npm run dev
 
 Test it:
 ```bash
-# Health check
+
 curl http://localhost:8000/health
 
-# All notifications
+
 curl http://localhost:8000/api/notifications
 
-# Priority notifications (top 10)
+
 curl http://localhost:8000/api/notifications/priority?n=10
 ```
 
-Take **screenshots** showing request body, response body, and status 200.
 
 ---
 
@@ -200,69 +159,3 @@ npm run dev
 
 Open http://localhost:3000 in your browser.
 
-Take **screenshots** of:
-- All Notifications page (desktop view)
-- All Notifications page (mobile view — use Chrome DevTools)
-- Priority Inbox page
-- Filter working (e.g. "Placement" only)
-- New notification badge
-
----
-
-### STEP 8 — Push to GitHub
-
-```bash
-# From the root of your repo
-git add .
-git commit -m "Complete full stack notification platform"
-git push origin main
-```
-
-Make sure `.env` and `.env.local` files are NOT committed (they are in .gitignore).
-
----
-
-### STEP 9 — Record a Video (Stage 7 requirement)
-
-Record a short screen recording showing:
-1. The All Notifications page loading
-2. Switching filters (Placement / Result / Event)
-3. Clicking a notification to mark it as read
-4. Switching to Priority Inbox, changing N value
-5. Mobile view
-
-Upload the video to your GitHub repo or as a YouTube unlisted link, referenced in your README.
-
----
-
-## 📸 Screenshot Checklist (for Postman)
-
-For each API call, capture:
-- ✅ Request URL + method
-- ✅ Request body (JSON)
-- ✅ Response body (JSON)
-- ✅ Status code (200)
-- ✅ Response time
-
-APIs to screenshot:
-1. `POST /register`
-2. `POST /auth`
-3. `POST /logs` (logging middleware call)
-4. `GET /notifications`
-5. `GET /notifications/priority`
-
----
-
-## 🧠 Stage Answers Summary
-
-| Stage | What you submit |
-|-------|----------------|
-| 1 | REST API design in `notification_system_design.md` |
-| 2 | DB schema + SQL queries in same `.md` file |
-| 3 | Query analysis + fix + index advice in same `.md` |
-| 4 | Caching strategy in same `.md` |
-| 5 | Redesigned bulk notify pseudocode in same `.md` |
-| 6 | Priority algorithm code in `priorityService.ts` + explanation in `.md` |
-| 7 | React/Next.js frontend in `notification_app_fe/` |
-
-# 12303831
